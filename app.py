@@ -85,6 +85,7 @@ def index():
             "image_path": p[4]
         } for p in pokemons
     ]
+    pokemons = sorted(pokemons, key=lambda x: x['weight'], reverse=True)
     connection.close()
 
     # return {"pokemons": pokemons}
