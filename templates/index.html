@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Pokemon</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Base Experience</th>
+            <th>Weight</th>
+            <th>Image</th>
+        </tr>
+        {% for pokemon in pokemons %}
+        <tr>
+            <td>{{ pokemon.id }}</td>
+            <td>{{ pokemon.name }}</td>
+            <td>{{ pokemon.base_experience }}</td>
+            <td>{{ pokemon.weight }}</td>
+            <td><img src="{{ url_for('display_image', filename=pokemon.image_path) }}" alt="{{ pokemon.name }}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
