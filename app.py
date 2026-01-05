@@ -1,7 +1,6 @@
 import requests
 from flask import Flask, render_template
 import sqlite3
-import os
 
 app = Flask(__name__)
 db_name = 'pokemon.db'
@@ -66,9 +65,6 @@ def get_pokemon():
     connection.commit()
 
     return {"message": "Pokemon fetched successfully"}
-
-asset_folder = os.path.join(app.root_path, 'asset')
-app.config['UPLOAD_FOLDER'] = asset_folder
 
 @app.route('/', methods=['GET'])
 def index():

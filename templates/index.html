@@ -20,7 +20,7 @@
             <td>{{ pokemon.name }}</td>
             <td>{{ pokemon.base_experience }}</td>
             <td>{{ pokemon.weight }}</td>
-            <td><img src="{{ url_for('display_image', filename=pokemon.image_path) }}" alt="{{ pokemon.name }}"></td>
+            <td><img src="{{ pokemon.image_path }}" alt="{{ pokemon.name }}"></td>
         </tr>
         {% endfor %}
     </table>
